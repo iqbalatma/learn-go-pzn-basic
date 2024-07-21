@@ -1,0 +1,193 @@
+we can build golang with #go build filename.go
+we can run without compile with #go run filename.go
+
+in one package, we can only have single main function
+when we declare more than 1 main function and then build the program it will throw an error.
+
+but for development purpose we will not build the program. we just need to run the program
+
+----------------------------------
+#DATA TYPE NUMBER
+int8    -128    127
+int16   -32768  32767
+int32   -2147483648 2147483647
+int64   -9223372036854775808    9223372036854775807
+
+we also have positive number, just add u (unsigned)
+uint8
+uint16
+uint32
+uint64
+
+for decimal, we can use floating point
+float32
+float64
+complex64
+complex128
+
+alias
+byte uint8
+rune int32
+int minimal int32
+uint minimal int32
+----------------------------------
+#DATA TYPE BOOLEAN
+value will be true/false
+----------------------------------
+#DATA TYPE STRING
+string is data type collection of character
+to write string we use ""
+function on string
+len("string") = to get number of character in the string
+"string"[1] = to get character in index 1 (the character in byte)
+----------------------------------
+#VARIABLE
+variable is a place where we can store value to use in multiple place
+in variable only can hold 1 data type
+ex:
+    var name String;
+    name = "iqbal";
+if we define value on variable, we do not have to declare data type
+ex:
+    var name = "iqbal"
+we can also define variable without var, just add :=
+ex:
+    name := "iqbal"
+define multiple variable
+    var (
+        firstName = "iqbal"
+        lastName = "atma"
+    )
+----------------------------------
+#CONSTANT
+constant value cannot change
+value in constant must be define on declare
+ex:
+    const firstName string = "iqbal"
+    const firstName = "iqbal"
+----------------------------------
+#DATA TYPE CONVERSION
+we can change data type from one to another, for example int8 to int32.
+if the value is over capacity of data type, number overflow will occur
+----------------------------------
+#TYPE DECLARATION
+we can define our own data type
+it's like an alias for a data type
+the purpose of type declaration is to help us to understand
+----------------------------------
+#OPERATOR
++
+-
+*
+/
+%
+
+augmented assignment
+a = a + 10 => a += 10;
+a = a - 10 => a -= 10;
+a = a * 10 => a *= 10;
+a = a / 10 => a /= 10;
+a = a % 10 => a %= 10;
+
+unary operator
+++ => a= a+1
+-- => a= a-1
++ positive
+- negative
+
+comparison
+!=
+==
+<=
+>=
+<
+>
+
+boolean operator
+&& and
+|| or
+! negation
+----------------------------------
+#ARRAY
+array is a collection of data with same data type
+we must define array length and cannot be changed
+array will have index and start from 0
+var names [3]string
+var values = [3]int {
+    1,2,3
+}
+function array
+len(values)
+values[1] to get value in array index 1
+values[1] = 20, to assign value in array index 1
+----------------------------------
+#SLICE
+slice is a cut of array, based on start and end index
+array[4:7] pointer 4, length 3
+function slice
+len(slice) to get length of slice
+cap(slice) to get cap of slice
+----------------------------------
+#MAP
+map are data type collection of pair key and value
+in array we access via index integer, in map we access via key
+key is unique
+in map, we can add as much as we want for data length
+person := map[string]string{
+    "name" : "iqbal",
+    "age" : "25"
+}
+
+len(map) get length of map
+map[key] to access map via key
+map[key] = value, to assign value to key
+delete(map, key) to delete map data
+----------------------------------
+#IF
+if is flow control, for many condition
+if value == "iqbal" {
+    fmt.Println("Helo iqbal")
+}
+----------------------------------
+#SWITCH
+switch is flow control for one variable and many condition
+name := "iqbal"
+
+switch name {
+    case "iqbal":
+        fmt.Println("helo iqbal")
+    case "budi"
+        fmt.Println("helo budi")
+    default:
+        fmt.Println("hi what is your name")
+}
+----------------------------------
+#FOR
+for use to loop program with condition
+for counter <= 10 {
+    fmt.Println("this is counter number ", counter);
+    counter++
+}
+
+we also can use for with statement
+init statement, conditional check, post statement
+for i:=0;i<10;i++{
+    fmt.Println("this is i on ", i)
+}
+
+we also can use for range in array, slice, and map
+names := []string{"iqbal", "atma", "muliawan"}
+for index, name := range names {
+    fmt.Println("index", index, "=", name)
+}
+----------------------------------
+#BREAK
+break is a statement to stop looping process
+we can break a loop when a loop meet some condition
+----------------------------------
+#CONTINUE
+continue is a statement to skip current looping and still loop next iteration
+----------------------------------
+#FUNCTION
+function is a block code that makes your code can execute multiple times
+create function with keyword func(){}
