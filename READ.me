@@ -191,3 +191,34 @@ continue is a statement to skip current looping and still loop next iteration
 #FUNCTION
 function is a block code that makes your code can execute multiple times
 create function with keyword func(){}
+----------------------------------
+#FUNCTION MULTIPLE RETURN VALUE
+we can return multiple value to golang, just write multiple data type on retrun
+func example() (string, string){
+    return "iqbal", "atma"
+}
+we can catch return value
+firstName, lastName := example()
+
+we also can ignore return value to avoid error
+firstName, _ := example()
+----------------------------------
+#VARIADIC ARGUMENTS
+variadic argument is a way to declare dynamic multiple argument
+the argument will catch as array
+variadic argument (varargs) must be defined in last order of argument
+----------------------------------
+#FUNCTION AS VALUE AND AS PARAMTER
+we can define a function into value of a variable
+when define function as value, do not use () because () will call the function
+
+we also can define a function as parameter
+when define function as parameter we may write a long function, we can declare type for that function
+type Filter func(string) string
+
+func example(name string, filter Filter){
+
+}
+----------------------------------
+#FUNCTION ANONYMOUS
+we can declare a function without a name
