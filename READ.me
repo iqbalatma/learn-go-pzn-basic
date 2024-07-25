@@ -235,3 +235,39 @@ recover is like catch in php
 ----------------------------------
 #STRUCT
 struct is collection of data
+----------------------------------
+#INTERFACE
+interface is a contract blueprint
+to implement interface, we just make something that full fill the interface, so automatically considered as that interface
+----------------------------------
+#BLANK INTERFACE
+all data type is implement of blank interface, interface{}
+golang has any type that alias for interface{}
+----------------------------------
+#NIL
+nil only can use in interface, function, map, slice, pointer, channel
+----------------------------------
+#TYPE ASSERTION
+Type assertion is ability to modify data type of a variable
+----------------------------------
+#POINTER
+by default golang pass data by value, it's mean value of that variable is duplicated
+we can use pointer to pass by reference
+when we pass by reference a variable, we refer to same memory address
+----------------------------------
+#ASTERISK OPERATOR
+when we use asterisk operator, all same reference will also change to new reference
+it's like two data binding in vue
+----------------------------------
+#NEW
+new is a way to create pointer but with empty data
+----------------------------------
+#ACCESS MODIFIER
+if function write with uppercase, it's mean the function can accessed from another package
+if lowercase, it's mean cannot accessed via another package
+----------------------------------
+#PACKAGE INITIALIZE
+package initialize execute when package get accessed
+we just need to write private function init()
+we can use blank identifier
+blank identifier is when we want to running init, without calling any function
